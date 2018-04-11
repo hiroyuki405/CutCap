@@ -35,17 +35,17 @@ namespace CutCap
             clip,
         }
 
-        private static KeyboardHook _keyboardHook;
-        private static MouseHook _mouseHook;
-        private static KeyManager _keyManager;
-        private static ArrayList _pressTarget_clip;
-        private static ArrayList _pressTarget_save;
-        private static ImageCapture _imageCapture;
-        private static Image _image;
-        private static VirtualScreen[] _virtualScreen;
-        private static mode _mode;
+        private static KeyboardHook _keyboardHook;  //キーボードのグローバルフック管理クラス
+        private static MouseHook _mouseHook; //マウスのグローバルフック管理クラス
+        private static KeyManager _keyManager;　//押下中のキーボード管理クラス
+        private static ArrayList _pressTarget_clip; //ショートカットキー（クリップボードにコピー）保存アレイ
+        private static ArrayList _pressTarget_save; //ショートカットキー（画像保存）保存アレイ
+        private static ImageCapture _imageCapture; //画像キャプチャクラス
+        private static Image _image; //キャプチャ画像一時保存用
+        private static VirtualScreen[] _virtualScreen; //キャプチャ用仮想スクリーン
+        private static mode _mode; //ショートカットモード
 
-        private static state _state;
+        private static state _state; //状態ステート
 
         public CutCapMain()
         { 
@@ -115,9 +115,7 @@ namespace CutCap
                     
                     _image.Save(date);
                 }
-                //MessageBox.Show("キャプチャしました");
-                //var v = new ImageBoard(_image);
-                //v.Show();
+                new SoundPlayer().playShutter(); 
             }
         }
         
