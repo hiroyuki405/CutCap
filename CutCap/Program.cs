@@ -16,7 +16,8 @@ namespace CutCap
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            CutCapMain cutcap = new CutCapMain();
+            Application.Run();
         }
     }
 }

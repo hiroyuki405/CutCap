@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace CutCap
 {
-    public partial class Form1 : Form
+    public partial class BorderFrame : Form
     {
-        public Form1()
+        public BorderFrame()
         {
             InitializeComponent();
+        }
+        
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
